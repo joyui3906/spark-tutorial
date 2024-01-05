@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.spark.tutorial'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation files('libs/spark-sql_2.13-3.2.1.jar')
+    implementation files('libs/spark-core_2.13-3.2.1.jar')
+    implementation files('libs/scala-collection-compat_2.13-2.2.0.jar')
+    implementation files('libs/scala-library-2.13.6.jar')
+}
+
+test {
+    useJUnitPlatform()
+}
